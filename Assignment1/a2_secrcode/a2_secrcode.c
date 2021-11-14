@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int encrypt(int, int, int);
 
@@ -16,5 +17,6 @@ int main(int argc, char const *argv[])
 }
 
 int encrypt(int s, int n, int m) {
-    return (((s*n%10)^m)%17);
+    // return (((s*n%10)^m)%17);   // Considering "^" as XOR operator
+    return (int)(pow(((s*n)%10), m)) % 17;   // Considering "^" means exponential operator (Power)
 }
