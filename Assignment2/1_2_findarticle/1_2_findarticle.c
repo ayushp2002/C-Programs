@@ -93,6 +93,7 @@ int count_article_by_splitting(char *str) {
         token[i] = malloc (WORD_SIZE * sizeof(char));
     }
     
+    // can also use strtok() string method for the same purpose
     // tokenize and store the words separated by space, comma, or period
     for (int i = 0; i <= len; i++) {
         if (str[i] != ' ' || str[i] == ',' || str[i] == '.') {
