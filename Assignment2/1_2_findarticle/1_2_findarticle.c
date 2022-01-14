@@ -52,6 +52,14 @@ int count_article(char *str) {
     }
     
     // perform checks for intermediate letters
+    /*
+    If the current character is a space,
+    then check the next character. If the next character is 'a', then check the next
+    two characters. If the next two characters are 'an', then increment the count.
+    If the next two characters are 'a', then increment the count. If the next
+    character is 't', then check the next two characters. If the next two characters
+    are 'the', then increment the count.
+    */
     for (i = 0; i <= len; i++) {
         if (str[i] == ' ') {
             if (str[i+1] == 'a') {
@@ -95,8 +103,17 @@ int count_article_by_splitting(char *str) {
     
     // can also use strtok() string method for the same purpose
     // tokenize and store the words separated by space, comma, or period
+    /*
+    1. Initialize the token array with the number of words in the string.
+    2. Initialize the currentchar array with the first character of the string.
+    3. Loop through the string, if the current character is not a space, comma, or period, add it to
+    the currentchar array.
+    4. If the current character is a space, comma, or period, add the currentchar array to the token
+    array and increment the word_count.
+    5. Return the token array.
+    */
     for (int i = 0; i <= len; i++) {
-        if (str[i] != ' ' || str[i] == ',' || str[i] == '.') {
+        if (str[i] != ' ' || str[i] != ',' || str[i] != '.') {
         // if (str[i] < 'a' || str[i] > 'Z') {  // use this to assume any non alpha character as a separator
             currentchar[0] = str[i];
             strcat(token[word_count], currentchar);
@@ -114,6 +131,9 @@ int count_article_by_splitting(char *str) {
     return count;
 }
 
+/*
+Convert all characters in a string to lowercase.
+*/
 int str_tolower(char *str) {
     for (int i = 0; i < strlen(str); i++) {
         str[i] = tolower(str[i]);

@@ -11,6 +11,14 @@ int main(int argc, char const *argv[]) {
     return 0;
 }
 
+/*
+1. Get the last digit of the input number.
+    2. Multiply all the digits from 1 to the last digit.
+    3. Add the result to the fact_sum.
+    4. Repeat steps 1-3 until the input number is 0.
+    5. If the fact_sum is equal to the input number, return 0. Strong number
+    6. Else return 1. Not a strong number
+*/
 int check_strong_num(int input) {
     int fact_sum = 0, num = input;
     while (num > 0) {

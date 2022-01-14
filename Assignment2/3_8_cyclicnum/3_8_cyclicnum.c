@@ -15,6 +15,10 @@ int main(int argc, char const *argv[]) {
 int check_cyclic_num(int input) {
     int square = input * input, num = input, flag = 0;
 
+    /*
+    If the last digit of the number is not the same as the digits of the square, then the number
+    is not a cyclic number.
+    */
     for (int i = 1; num > 0; i++) {
         if (square % 10 != num % 10) {
             return 1;

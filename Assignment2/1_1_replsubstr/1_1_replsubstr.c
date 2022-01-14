@@ -23,6 +23,9 @@ int main() {
     return 0;
 }
 
+/*
+Replace the substring in the original string with the replacement string.
+*/
 char* repl_sub_str(char *str, char *repl, int start, int end) {
     char newstr[80];
     end--;
