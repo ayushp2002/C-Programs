@@ -1,0 +1,10 @@
+12345 Ayush CompScience 85.5 46 92 88.7
+23456 KingHarry Chemistry 56 43 86.3 64
+34567 Akash Design 71 52 90.3 54.1
+45678 Diluc BioTech 76 32 54.2 46
+56789 Nelson Psychology 32.1 64.2 75 23
+67890 Steve Geography 90 87.3 85.9 76.3
+78901 Wayne Politics 23.6 75.3 43 75
+89012 Malone Biology 54.2 64 24 76
+90123 Ganyu CompScience 95 53.2 78 96
+01234 Wagner Psychology 64 75.4 84 64

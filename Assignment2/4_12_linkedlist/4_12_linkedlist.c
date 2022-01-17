@@ -114,7 +114,7 @@ int count_prime_items() {
     */
     while (ptr != NULL) {
         int flag = 0;
-        for (int i = 2; i < (ptr->data)/2; i++)
+        for (int i = 2; i <= (ptr->data)/2; i++)
             if (ptr->data % i == 0) flag = 1;
         
         if (flag == 0) count++;

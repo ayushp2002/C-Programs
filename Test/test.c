@@ -1,21 +1,40 @@
 #include <stdio.h>
-#include <limits.h>
 
-int main() {
-    int x, y = 1, n = 4, asd = INT_MAX;
-    for (int i = 0; i < n; i++)
+int main()
+{
+    int input, flag = 0;
+    printf("Enter a number: ");
+    scanf("%d", &input);
+
+    for (int i = 2; i <= input/2; i++)
     {
-        x = y;
-        if (y == 1) y = 0;
-        else y = 1;
-        for (int j = 0; j <= i; j++)
+        if (input%i == 0)
         {
-            printf("%d\t", x);
-            if (x == 1) x = 0;
-            else x = 1;
+            flag = 1;
         }
-        printf("\n");
     }
-    
+    if (flag == 1)
+    {
+        printf("Not Prime");
+    }
+    else
+    {
+        printf("Prime");
+    }
     return 0;
 }
+
+// int main() {
+//     int last = 0, current = 1, next, n;
+
+//     printf("Enter number of times: ");
+//     scanf("%d", &n);
+//     for (int i = 0; i < n; i++)
+//     {
+//         printf("%d, ", current);
+//         next = last + current;
+//         last = current;
+//         current = next;
+//     }
+//     return 0;
+// }
