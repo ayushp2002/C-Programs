@@ -3,7 +3,7 @@
 int check_strong_num(int);
 
 int main(int argc, char const *argv[]) {
-
+    printf("Strong numbers between 100 and 999:\n");
     for (int i = 100; i < 1000; i++)
         if (check_strong_num(i) == 0) printf("%d\t", i);
     

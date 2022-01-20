@@ -4,7 +4,7 @@
 int check_cyclic_num(int);
 
 int main(int argc, char const *argv[]) {
-
+    printf("Cyclic numbers between 1 to 99:\n");
     for (int i = 1; i < 100; i++)
         if (check_cyclic_num(i) == 0) printf("%d\t", i);
     

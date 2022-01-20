@@ -37,6 +37,7 @@ int main() {
     return 0;
 }
 
+/* Given an array of integers, find the position of a given integer in the array. */
 int linear_search(int arr[], int element, int size) {
     int pos = -2;
     for (int i = 0; i < size; i++) {
@@ -48,6 +49,7 @@ int linear_search(int arr[], int element, int size) {
     return pos+1;
 }
 
+/* Given an array of integers, sort the array in ascending order. */
 void sort(int arr[], int size) {
     int temp;
     for (int i = 0; i < size - 1; i++) {
@@ -61,6 +63,7 @@ void sort(int arr[], int size) {
    }
 }
 
+/* Given an array of integers, find the index of the element that is equal to the given integer. */
 int binary_search(int arr[],int element, int size) {
   int f = 0, r = size, mid;
 

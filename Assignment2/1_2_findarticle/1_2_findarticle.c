@@ -3,8 +3,8 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-#define STRING_SIZE 100
-#define WORD_SIZE 20
+#define STRING_SIZE 300
+#define WORD_SIZE 200
 
 /*  
     Tokenizing the string into words and then comparing is not the most efficient
@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 {
     char *str = malloc(STRING_SIZE * sizeof(char));
     printf("Enter a string: ");
-    fgets(str, 100, stdin);
+    fgets(str, 300, stdin);
 
     str_tolower(str);   // strings are always passed by reference so no need to capture returning value
 
@@ -113,7 +113,7 @@ int count_article_by_splitting(char *str) {
     5. Return the token array.
     */
     for (int i = 0; i <= len; i++) {
-        if (str[i] != ' ' || str[i] != ',' || str[i] != '.') {
+        if (str[i] != ' ' && str[i] != ',' && str[i] != '.') {
         // if (str[i] < 'a' || str[i] > 'Z') {  // use this to assume any non alpha character as a separator
             currentchar[0] = str[i];
             strcat(token[word_count], currentchar);

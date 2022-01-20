@@ -19,6 +19,7 @@ int count_items_div_seven();
 void display_list();
 
 int main(int argc, char const *argv[]) {
+    // can use scanf for dynamic insertion of items
     insert_item(45);
     insert_item(2);
     insert_item(250);
@@ -143,7 +144,7 @@ void display_list() {
     Printing the data of each node in the linked list.
     */
     while (node != NULL) {
-        printf("%d -> ", node->data);
+        printf(" -> %d", node->data);
         node = node->link;
     }
 }

@@ -7,13 +7,13 @@ int main() {
     char inputstr[80], replstr[80];
     int startpos, endpos;
 
-    printf("Enter a string: ");gets(inputstr);
-    printf("Replacement string: ");gets(replstr);
+    printf("Enter a string: ");fgets(inputstr, 80, stdin);
+    printf("Replacement string: ");fgets(replstr, 80, stdin);
     printf("Start position [space] End position: ");scanf("%d%d", &startpos, &endpos);
     // if the user gives an end position more than the replacement string can cover,
     // then give error and terminate program with RC 1
-    if ((endpos-startpos) > strlen(replstr) - 2) {
-        printf("End position is longer than replacement string");
+    if ((endpos-startpos) > strlen(replstr) - 1) {
+        printf("End position is longer than replacement string\n");
         return 1;
     }
 

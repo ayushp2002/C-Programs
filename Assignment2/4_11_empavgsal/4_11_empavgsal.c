@@ -117,8 +117,8 @@ objects.
 */
 void emp_input(struct employee obj[], int count) {
     printf("Enter employee Number, First Name, Department, Designation and salary (separated by space)\n");
+    printf(">> \n");    
     for (int i = 0; i < count; i++) {
-        printf(">> ");
         scanf("%s%s%s%s%lf", obj[i].num, obj[i].name, obj[i].dept, obj[i].desig, &obj[i].salary);
     }
 }
