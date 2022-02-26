@@ -1,16 +1,15 @@
 #include <stdio.h>
 
-int main(int argc, char const *argv[])
-{
-    int a = 33, b = 47, c;
-    c = a & b;
-    printf("\na & b = %d", c);
-    c = c >> 4;
-    printf("\nc >> 4 = %d", c);
-    printf("\n");
-    return 0;
-}
-
+// int main(int argc, char const *argv[])
+// {
+//     int a = 33, b = 47, c;
+//     c = a & b;
+//     printf("\na & b = %d", c);
+//     c = c >> 4;
+//     printf("\nc >> 4 = %d", c);
+//     printf("\n");
+//     return 0;
+// }
 
 // void main() {
 //     int a[] = {3,1,5,4}, i, j, s = 0;
@@ -20,8 +19,7 @@ int main(int argc, char const *argv[])
 //             if (i==a[j])
 //             {
 //                 printf("%d", i);
-//             }
-            
+//             }            
 //     }
 // }
 
@@ -63,3 +61,20 @@ int main(int argc, char const *argv[])
 //     }
 //     return 0;
 // }
+
+int main(int argc, char const *argv[]) {
+    int count = 0;
+    for (int i = 0; i < 100000; i++) {
+        int n = i, sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        if (sum == 7) {
+            count++;
+            printf("%d\n", i);
+        }        
+    }
+    printf("%d", count);
+    return 0;
+}
