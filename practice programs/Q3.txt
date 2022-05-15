@@ -1,0 +1,49 @@
+Detect whether a given positive integer N can be written as a
+product of powers of 2, 3 and 5. That is, check whether N is exactly
+equal to
+
+2^i x 3^j x 5^k
+
+where i>=0, j>=0, and k>=0 are non-negative integers.
+
+If yes, then print
+i#j#k
+Otherwise, print
+no
+
+You can assume that N<9999.
+
+#include<stdio.h>
+int main()
+{
+  int N,i=0,j=0,k=0;
+  scanf("%d",&N);
+  while(N>1)
+  {
+    if(N%2==0)
+    {
+      i++;
+      N=N/2;
+    }
+    else if(N%3==0)
+    {
+      j++;
+      N=N/3;
+    }
+    else if(N%5==0)
+    {
+      k++;
+      N=N/5;
+    }
+    else
+    {
+      N=-1;
+      break;
+    }
+  }
+  if(N==-1)
+    printf("no");
+  else
+    printf("%d#%d#%d",i,j,k);
+  return 0;
+}

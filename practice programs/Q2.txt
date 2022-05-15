@@ -1,0 +1,46 @@
+You are given a "secret" string, and you are given a "guess"
+string. Both strings have exactly 5 characters.
+
+Assume that each letter occurs at most one time in the secret string and the
+guess string.
+
+Some of the letters in the guess string occur in the same position as
+the secret string. Call the number of such letters as I.
+
+Some other letters in the guess string occur in the secret string, but
+in some other position. Call the number of such letters as J.
+
+You have to output
+I#J
+
+#include<stdio.h>
+int main()
+{
+  int I=0;
+  int J=0;
+  char secret[6];
+  char guess[6];
+  scanf("%s",secret);
+  scanf("%s",guess);
+
+  for(int i=0;i<5;i++)
+  {
+    if(secret[i]==guess[i])
+      I++;
+  
+  }
+  for(int i=0;i<5;i++)
+  {
+    if(guess[i]!=secret[i])
+    {
+     	for(int j=0;j<5;j++)
+        {
+          if(guess[i]==secret[j])
+            J++;
+        }
+    }
+   
+  }
+  printf("%d#%d",I,J);
+  return 0;
+}
