@@ -159,24 +159,116 @@
 //         printf("\nQuery3: %d", sumQuery(aux, tli, tlj, rbi, rbj));
 //     }
 
-#include<stdio.h>
-#define inf 100
-void main()
+// #include<stdio.h>
+// #define inf 100
+// void main()
+// {
+// int i,j,arr[3][3];
+//  for(i=0;i<3;i++)
+//   for(j=0;j<3;j++)
+//   {
+//   scanf("%d",&arr[i][j]);
+//   if(arr[i][j]==0)
+//   arr[i][j]=inf;
+//   }
+//  if(arr[0][0]/arr[1][0]==arr[0][1]/arr[1][1]&&arr[0][0]/arr[1][0]==arr[0][2]/arr[1][2])
+//   printf("0#1");
+//  else if(arr[0][0]/arr[2][0]==arr[0][1]/arr[2][1]&&arr[0][0]/arr[2][0]==arr[0][2]/arr[2][2])
+//   printf("0#2");
+//  else if(arr[1][0]/arr[2][0]==arr[1][1]/arr[2][1]&&arr[1][0]/arr[2][0]==arr[1][2]/arr[2][2])
+//   printf("1#2");
+//  else
+//    printf("0#0");
+// }
+
+// #include<stdio.h>
+
+// char tree[10];
+
+// int root(char key) {
+//   if (tree[0] != '\0')
+//     printf("Tree already had root");
+//   else
+//     tree[0] = key;
+//   return 0;
+// }
+ 
+// int set_left(char key, int parent) {
+//   if (tree[parent] == '\0')
+//     printf("\nCan't set child at %d  , no parent found", (parent * 2) + 1);
+//   else
+//     tree[(parent * 2) + 1] = key;
+//   return 0;
+// }
+ 
+// int set_right(char key, int parent) {
+//   if (tree[parent] == '\0')
+//     printf("\nCan't set child at %d  , no parent found", (parent * 2) + 2);
+//   else
+//     tree[(parent * 2) + 2] = key;
+//   return 0;
+// }
+ 
+// int print_tree() {
+//   printf("\n");
+//   for (int i = 0; i < 10; i++) {
+//     if (tree[i] != '\0')
+//       printf("%c", tree[i]);
+//     else
+//       printf("-");
+//   }
+//   return 0;
+// }
+ 
+// // Driver Code
+// int main() {
+//   root('A');
+//   //insert_left('B',0);
+//   set_right('C', 0);
+//   set_left('D', 1);
+//   set_right('E', 1);
+//   set_right('F', 2);
+//   print_tree();
+//   return 0;
+// }
+
+#include <stdio.h>
+ 
+void swap(int* xp, int* yp)
 {
-int i,j,arr[3][3];
- for(i=0;i<3;i++)
-  for(j=0;j<3;j++)
-  {
-  scanf("%d",&arr[i][j]);
-  if(arr[i][j]==0)
-  arr[i][j]=inf;
-  }
- if(arr[0][0]/arr[1][0]==arr[0][1]/arr[1][1]&&arr[0][0]/arr[1][0]==arr[0][2]/arr[1][2])
-  printf("0#1");
- else if(arr[0][0]/arr[2][0]==arr[0][1]/arr[2][1]&&arr[0][0]/arr[2][0]==arr[0][2]/arr[2][2])
-  printf("0#2");
- else if(arr[1][0]/arr[2][0]==arr[1][1]/arr[2][1]&&arr[1][0]/arr[2][0]==arr[1][2]/arr[2][2])
-  printf("1#2");
- else
-   printf("0#0");
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+ 
+// A function to implement bubble sort
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+ 
+        // Last i elements are already in place
+        for (j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                swap(&arr[j], &arr[j + 1]);
+}
+ 
+/* Function to print an array */
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+ 
+// Driver program to test above functions
+int main()
+{
+    int arr[] = { 35,57,26,18,99,95,92,48,75,45,63,59,17,85,31 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    bubbleSort(arr, n);
+    printf("Sorted array: \n");
+    printArray(arr, n);
+    return 0;
 }
